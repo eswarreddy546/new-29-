@@ -38,7 +38,13 @@ dnf install nodejs -y
 valid $? "install node js"
 
 
+id=roboshop
+if [ $id -ne 0 ]; then
 useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
+else 
+
+echo " user is added skipp it "
+fi
 
 mkdir -p /app 
 

@@ -63,7 +63,7 @@ valid $? "unzip user"
 npm install &>>$LOG_FILE
 valid $? "Install dependencies"
 
-cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service
+cp $SCRIPT_DIR /user.service /etc/systemd/system/user.service
 valid $? "Copy systemctl service"
 
 systemctl daemon-reload
