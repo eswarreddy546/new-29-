@@ -58,7 +58,7 @@ unzip /tmp/cart.zip
 valid $? "unzip the file"
 
 
-cd/app 
+cd /app 
 valid $? "move directory"
 
 npm install 
