@@ -50,6 +50,7 @@ curl -L -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
 valid $? "excuting the curl"
 
 
+# shellcheck disable=SC2164
 cd /app 
 valid $? "Changing to app directory"
 
