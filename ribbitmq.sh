@@ -28,7 +28,7 @@ valid (){ # functions receive inputs through args just like shell script args
         echo -e "$2 ... $G SUCCESS $N" | tee -a $LOG_FILE
     fi
 }
-cp $SCRIPT_DIR /ribbitmq.repo //etc/yum.repos.d/rabbitmq.repo/ribbitmq.repo
+cp $SCRIPT_DIR ribbitmq.repo //etc/yum.repos.d/rabbitmq.repo/ribbitmq.repo
 valid $? "moving data from one service"
 
 dnf install rabbitmq-server -y
