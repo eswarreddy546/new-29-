@@ -36,9 +36,13 @@ valid $? "enable nodejs"
 
 dnf install nodejs -y
 valid $? "install nodejs"
-
+id=roboshop
+if [ $id -ne 0 ]; then
 useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
+else 
 
+echo " user is added skipp it "
+fi
 mkdir -p /app 
 
 curl -L -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
@@ -46,7 +50,7 @@ curl -L -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
 valid $? "excuting the curl"
 
 
-cd/app 
+cd /app 
 
 rm -rf /app*
 valid $? " sucessfully remove the fileees"
