@@ -56,11 +56,11 @@ valid $? "unzip the file"
 
 
 
-cd /app 
+cd $SCRIPT_DIR/app 
 npm install 
 valid $? "npm install is sucessfully completed"
 
-cp $SCRIPT_DIR /User.server /etc/systemd/system/user.service
+cp $SCRIPT_DIR/User.server /etc/systemd/system/user.service
 
 systemctl daemon-reload
 valid $? "daemon is reload sucessfully"
