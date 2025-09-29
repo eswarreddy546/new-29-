@@ -8,7 +8,7 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/new-29-"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-#SCRIPT_DIR=$PWD
+SCRIPT_DIR=$PWD
 #MONGODB_HOST=mongo.eswar.xyz
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 
@@ -28,7 +28,7 @@ valid (){ # functions receive inputs through args just like shell script args
         echo -e "$2 ... $G SUCCESS $N" | tee -a $LOG_FILE
     fi
 }
-cp ribbitmq.repo //etc/yum.repos.d/rabbitmq.repo/ribbitmq.repo
+cp $SCRIPT_DIR /ribbitmq.repo //etc/yum.repos.d/rabbitmq.repo/ribbitmq.repo
 valid $? "moving data from one service"
 
 dnf install rabbitmq-server -y
