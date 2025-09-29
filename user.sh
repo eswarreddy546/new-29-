@@ -51,20 +51,20 @@ valid $? "excuting the curl"
 
 
 cd /app 
+valid $? "Changing to app directory"
 
-rm -rf /app*
-valid $? " sucessfully remove the fileees"
+rm -rf /app/*
+valid $? "Removing existing code"
 
-unzip /tmp/user.zip
-valid $? "unzip the file"
+unzip /tmp/user.zip &>>$LOG_FILE
+valid $? "unzip user"
 
+npm install &>>$LOG_FILE
+valid $? "Install dependencies"
 
+cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service
+valid $? "Copy systemctl service"
 
-cd $SCRIPT_DIR/app 
-npm install 
-valid $? "npm install is sucessfully completed"
-
-cp $SCRIPT_DIR/User.server /etc/systemd/system/user.service
 
 systemctl daemon-reload
 valid $? "daemon is reload sucessfully"
