@@ -65,7 +65,6 @@ valid $? "Install dependencies"
 cp $SCRIPT_DIR/user.service /etc/systemd/system/user.service
 valid $? "Copy systemctl service"
 
-
 systemctl daemon-reload
 valid $? "daemon is reload sucessfully"
 
