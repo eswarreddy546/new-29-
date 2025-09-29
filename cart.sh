@@ -46,7 +46,8 @@ mkdir -p /app
 curl -L -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip
 valid $? "module disable"
 
-cd/app 
+# shellcheck disable=SC2164
+cd /app 
 
 valid $? "copy the directory"
 
