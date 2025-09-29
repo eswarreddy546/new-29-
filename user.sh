@@ -46,7 +46,7 @@ curl -L -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
 valid $? "excuting the curl"
 
 
-cd /app 
+cd/app 
 
 rm -rf /app*
 valid $? " sucessfully remove the fileees"
